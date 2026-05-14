@@ -16,15 +16,11 @@ ERP_CONTROL_OPTIONS = [
     "SoD Violation — identified deficiencies internal control determine whether individually combination constitute significant deficiencies",
     "Management Override of Controls — irrespective auditor assessment management override shall design perform audit procedures accounting estimates",
     "Missing Approval — auditor shall design perform tests of controls sufficient audit evidence operating effectiveness relevant controls",
-    "Unauthorized Account Access — auditor tests of controls access controls authorization users",
-    "Duplicate Payment Control Failure — auditor substantive procedures duplicate transactions detection controls",
 ]
 
 SHAP_FEATURE_OPTIONS = [
     "posting_hour — journal entries end of reporting period unusual posting hour select adjustments",
     "amount_ratio — substantive procedures material class transactions account balance irrespective assessed risk",
-    "weekend_flag — journal entries posted weekend unusual timing audit procedures",
-    "round_amount — round dollar amounts unusual transactions substantive procedures",
     "account_deviation — auditor shall evaluate unusual unexpected relationships analytical procedures investigate misstatement material",
 ]
 
