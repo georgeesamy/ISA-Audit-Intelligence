@@ -8,15 +8,14 @@ from ui import CUSTOM_CSS, HEADER_HTML
 
 
 @st.cache_resource
-def load_pipeline():
+def load_pipeline() -> LangGraphOrchestrator:
     isa_index = ISAVectorIndex()
     if isa_index._collection.count() == 0:
         existing = [p for p in PDF_PATHS if os.path.exists(p)]
         if existing:
             with st.spinner("Indexing ISA corpus (first launch only) …"):
                 index_isa_corpus(existing, isa_index)
-    orchestrator = LangGraphOrchestrator(isa_index)
-    return isa_index, orchestrator
+    return LangGraphOrchestrator(isa_index)
 
 
 def main():
@@ -28,7 +27,7 @@ def main():
     st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
     st.markdown(HEADER_HTML, unsafe_allow_html=True)
 
-    _, orchestrator = load_pipeline()
+    orchestrator = load_pipeline()
 
     st.markdown('<p class="section-label">Select Audit Inputs</p>', unsafe_allow_html=True)
 
