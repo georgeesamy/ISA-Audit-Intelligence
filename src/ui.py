@@ -67,6 +67,3 @@ class UI_Dashboard:
             st.info(final_state["isa_paragraph_shap"] or "No paragraph retrieved.")
         st.markdown("**Audit Observation**")
         st.success(final_state["final_output"] or "No narrative generated.")
-
-    def render_no_findings(self) -> None:
-        st.info("No entries exceed threshold")
