@@ -1,20 +1,9 @@
-from models import ControlAttribution, EnrichedExplanation, MergedExplanation, PipelineState
+from models import ControlAttribution, EnrichedExplanation, PipelineState
 
 
 class ISARAGRetrieval:
     def __init__(self, isa_index):
         self._isa_index = isa_index
-
-    def retrieve(self, merged: list[MergedExplanation]) -> list[EnrichedExplanation]:
-        results = []
-        for entry in merged:
-            state = {
-                "shap_column_name": entry.shap_column_name,
-                "erp_attribution_type": entry.erp_attribution.attribution_type,
-            }
-            node_result = self.retrieve_node(state)
-            results.append(node_result["enriched_explanation"])
-        return results
 
     def retrieve_node(self, state: PipelineState) -> dict:
         shap_query = state["shap_column_name"].split(" — ")[-1] if " — " in state["shap_column_name"] else state["shap_column_name"]
