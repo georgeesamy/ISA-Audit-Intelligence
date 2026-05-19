@@ -50,11 +50,11 @@ ISA-Audit-Intelligence/
 │   ├── George_Samy_Nabih_58-21333.pdf          # Thesis report
 │   ├── AI in Financial Reporting...Final Report.docx
 │   └── diagrams/                 # UML & architecture diagrams
-│       ├── final2class.drawio.png   # Class diagram
-│       ├── seq2.drawio.png          # Sequence diagram (refined)
-│       ├── seq11.drawio.png         # Sequence diagram
-│       ├── sa1.drawio.png           # Solution approach diagram
-│       └── *.drawio                 # Editable draw.io source files
+│       ├── ClassDiagram.drawio.png              # Class diagram
+│       ├── SequanceDiagram.png                  # Sequence diagram
+│       ├── RefinedSequanceDiagram.png           # Refined sequence diagram
+│       ├── SolutionApproach.drawio.png          # Solution approach diagram
+│       └── *.drawio                             # Editable draw.io source files
 └── resources/
     └── ISA-Standards/            # ISA PDF source documents
         ├── ISA 240.pdf
