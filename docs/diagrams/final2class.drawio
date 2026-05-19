@@ -1,0 +1,348 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="vjBHNkAzl2dbhKh3ocTJ" name="Page-3">
+    <mxGraphModel dx="1010" dy="379" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="20" width="960" x="330" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-2" parent="1" style="swimlane;startSize=30;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;swimlaneLine=0;shadow=0;rounded=1;" value="«component» LangGraphOrchestrator" vertex="1">
+          <mxGeometry height="70" width="660" x="480" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-3" parent="_y1nvcFhynvPyaQwmGC4-2" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="+ start_pipeline(gl_file, erp_config_file) : PipelineState" vertex="1">
+          <mxGeometry height="20" width="660" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-4" parent="1" style="swimlane;startSize=41;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;" value="«component» GLIngestionAgent" vertex="1">
+          <mxGeometry height="132" width="300" x="-3" y="174" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-5" parent="_y1nvcFhynvPyaQwmGC4-4" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="- column_mapping : dict&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="32" width="270" x="1" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-6" parent="_y1nvcFhynvPyaQwmGC4-4" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="&lt;font face=&quot;Helvetica&quot;&gt;+ingest(file: xlsx) : tuple(DataFrame,&lt;br&gt;list[IngestionIssue]).&amp;nbsp;&lt;br&gt;+ validate_row(row) : bool&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="270" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-7" edge="1" parent="_y1nvcFhynvPyaQwmGC4-4" style="endArrow=none;html=1;rounded=1;exitX=0;exitY=0;exitDx=0;exitDy=0;strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="_y1nvcFhynvPyaQwmGC4-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-3.410605131648481e-13" y="64" as="sourcePoint" />
+            <mxPoint x="273" y="64" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-8" parent="1" style="swimlane;startSize=25;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="«dataclass» IngestionIssue" vertex="1">
+          <mxGeometry height="99" width="241" x="19" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-9" parent="_y1nvcFhynvPyaQwmGC4-8" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="+ row_index : int&#xa;+ column : str&#xa;+ issue_description : str" vertex="1">
+          <mxGeometry height="71" width="241" x="-4" y="31" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-10" parent="1" style="swimlane;startSize=25;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="«dataclass» ConfigParseIssue" vertex="1">
+          <mxGeometry height="87" width="276" x="-16" y="729" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-11" parent="_y1nvcFhynvPyaQwmGC4-10" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;+ record_type : str&lt;/span&gt;&lt;/div&gt;+ issue_description : str" vertex="1">
+          <mxGeometry height="40" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-12" parent="1" style="swimlane;startSize=43;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;" value="«component»&#xa;FeatureEngineeringComponent" vertex="1">
+          <mxGeometry height="136" width="278" x="333" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-13" parent="_y1nvcFhynvPyaQwmGC4-12" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="- scaler : StandardScaler&#xa;- feature_names : list[str]" vertex="1">
+          <mxGeometry height="40" width="260" x="-6" y="39" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-14" parent="_y1nvcFhynvPyaQwmGC4-12" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="+ compute_features(gl: DataFrame) &lt;br&gt;: ndarray" vertex="1">
+          <mxGeometry height="30" width="260" x="-7" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-15" edge="1" parent="_y1nvcFhynvPyaQwmGC4-12" style="endArrow=none;html=1;rounded=1;strokeColor=light-dark(#000000,#000000);exitX=0;exitY=1;exitDx=0;exitDy=0;fontStyle=1;fontSize=16;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint y="88" as="sourcePoint" />
+            <mxPoint x="277" y="88" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-16" parent="1" style="swimlane;startSize=37;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;" value="«component»&#xa;AnomalyDetectionEnsemble" vertex="1">
+          <mxGeometry height="179" width="276" x="354" y="401" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-17" parent="_y1nvcFhynvPyaQwmGC4-16" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="- threshold : float&amp;nbsp;&lt;br&gt;- if_estimators : int&lt;br&gt;- lof_neighbors : int&lt;br&gt;- ae_architecture : list" vertex="1">
+          <mxGeometry height="60" width="277" x="-3" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-19" edge="1" parent="_y1nvcFhynvPyaQwmGC4-16" style="endArrow=none;html=1;rounded=1;exitX=0;exitY=1;exitDx=0;exitDy=0;strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-2.2737367544323206e-13" y="125" as="sourcePoint" />
+            <mxPoint x="276" y="126" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-18" parent="_y1nvcFhynvPyaQwmGC4-16" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;strokeColor=none;fontStyle=1" value="+ detect(feature_matrix: ndarray) : &lt;br&gt;flagged_rows:DataFrame" vertex="1">
+          <mxGeometry height="40" width="260" x="-5" y="129" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-20" parent="1" style="swimlane;startSize=41;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;" value="«component»&#xa;SHAPEngine" vertex="1">
+          <mxGeometry height="168" width="287" x="660" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-21" parent="_y1nvcFhynvPyaQwmGC4-20" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fillColor=none;fontStyle=1" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;- background_samples : int&lt;br&gt;- nsamples : int&lt;br&gt;- timeout : int" vertex="1">
+          <mxGeometry height="48" width="270" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-22" parent="_y1nvcFhynvPyaQwmGC4-20" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="+ explain(flagged_rows: DataFrame,&lt;br&gt;    feature_matrix: ndarray) :&lt;font&gt;&lt;font style=&quot;font-family: Helvetica; color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-family: Helvetica; color: rgb(250, 249, 245); text-wrap-mode: wrap;&quot;&gt;&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;i&gt;&lt;span style=&quot;line-height: 115%;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot; face=&quot;Helvetica&quot;&gt;shap_column_names: List&lt;/font&gt;&lt;/span&gt;&lt;/i&gt;" vertex="1">
+          <mxGeometry height="81" width="270" x="-3" y="101" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-23" edge="1" parent="_y1nvcFhynvPyaQwmGC4-20" style="endArrow=none;html=1;rounded=1;exitX=0;exitY=0;exitDx=0;exitDy=0;strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="138" y="103" />
+            </Array>
+            <mxPoint x="-4.547473508864641e-13" y="103" as="sourcePoint" />
+            <mxPoint x="285" y="103" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-24" parent="1" style="swimlane;startSize=44;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;" value="«component»&#xa;ERPControlAttributionAgent" vertex="1">
+          <mxGeometry height="137" width="259" x="665.5" y="416" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-25" parent="_y1nvcFhynvPyaQwmGC4-24" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="+ attribute(flagged_rows:&lt;br&gt;&amp;nbsp;DataFrame,&lt;br&gt;&amp;nbsp;control_graph: DiGraph)&amp;nbsp;&lt;br&gt;+list[ControlAttribution]" vertex="1">
+          <mxGeometry height="76" width="264" x="-3" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-26" parent="1" style="swimlane;startSize=46;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="«dataclass»&#xa;ControlAttribution" vertex="1">
+          <mxGeometry height="148" width="260" x="673" y="788" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-27" parent="_y1nvcFhynvPyaQwmGC4-26" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="+ gl_row_id : str&lt;br&gt;+ attribution_type : str&lt;br&gt;+ traversal_path : list" vertex="1">
+          <mxGeometry height="49" width="270" x="4.5" y="53" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-28" parent="1" style="swimlane;startSize=53;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;" value="«component»&#xa;ExplanationMergeComponent" vertex="1">
+          <mxGeometry height="118" width="310" x="1069" y="207" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-29" parent="_y1nvcFhynvPyaQwmGC4-28" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="+merge(&lt;i&gt;&lt;span style=&quot;line-height: 11.5px;&quot;&gt;shap_column_names: List&lt;/span&gt;&lt;/i&gt;, &lt;br&gt;control_attrs: list[ControlAttribution])&lt;font&gt; :&lt;br&gt;&amp;nbsp;&lt;span style=&quot;color: rgb(250, 249, 245); text-wrap-mode: wrap;&quot;&gt;list[MergedExplanation]&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="280" x="-5" y="50.5" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-30" parent="1" style="swimlane;startSize=43;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="«dataclass» &#xa;MergedExplanation" vertex="1">
+          <mxGeometry height="125" width="289" x="1048" y="396" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-31" parent="_y1nvcFhynvPyaQwmGC4-30" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="+ gl_row_id : str&lt;br&gt;+ ensemble_score : float&lt;br&gt;+shap_column_name: str&lt;br&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;+erp_attribution : ControlAttribution&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="270" x="-5" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-32" parent="1" style="swimlane;startSize=30;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;" value="«component»&#xa; ISARAGRetrieval" vertex="1">
+          <mxGeometry height="94" width="272" x="1054" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-33" parent="_y1nvcFhynvPyaQwmGC4-32" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="+ retrieve(merged: list&lt;br&gt;[MergedExplanation])&lt;br&gt;    : list[EnrichedExplanation]" vertex="1">
+          <mxGeometry height="39" width="238" y="31" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-34" parent="1" style="swimlane;startSize=42;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="«dataclass»&#xa;EnrichedExplanation" vertex="1">
+          <mxGeometry height="130" width="304" x="1033" y="784" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-35" parent="_y1nvcFhynvPyaQwmGC4-34" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="&lt;div&gt;+ gl_row_id : str&lt;/div&gt;&lt;div&gt;+ isa_paragraph : string&lt;/div&gt;&lt;div&gt;+ shap_column_name : str&lt;/div&gt;&lt;div&gt;+ erp_attribution : ControlAttribution&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="270" y="41" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-36" parent="1" style="swimlane;startSize=55;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;" value="«component»&#xa;LocalLLM" vertex="1">
+          <mxGeometry height="196" width="377" x="1020" y="953" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-37" parent="_y1nvcFhynvPyaQwmGC4-36" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- llm_model : str&lt;/span&gt;&lt;/div&gt;- max_chars : int&lt;br&gt;- timeout : int" vertex="1">
+          <mxGeometry height="68" width="280" x="4" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-38" edge="1" parent="_y1nvcFhynvPyaQwmGC4-36" style="endArrow=none;html=1;rounded=1;strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint y="129" as="sourcePoint" />
+            <mxPoint x="376" y="129" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-39" parent="_y1nvcFhynvPyaQwmGC4-36" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;" value="&lt;font&gt;&lt;div role=&quot;group&quot; aria-label=&quot;Code&quot; tabindex=&quot;0&quot; class=&quot;relative group/copy bg-bg-000/50 border-0.5 border-border-400 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-100&quot;&gt;&lt;div class=&quot;overflow-x-auto&quot;&gt;&lt;pre class=&quot;code-block__code !my-0 !rounded-lg !text-sm !leading-relaxed p-3.5&quot; style=&quot;background: transparent; font-family: var(--font-mono);&quot;&gt;&lt;div role=&quot;group&quot; aria-label=&quot;Code&quot; tabindex=&quot;0&quot; class=&quot;relative group/copy bg-bg-000/50 border-0.5 border-border-400 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-100&quot;&gt;&lt;div class=&quot;overflow-x-auto&quot;&gt;&lt;pre class=&quot;code-block__code !my-0 !rounded-lg !text-sm !leading-relaxed p-3.5&quot; style=&quot;background: transparent; font-family: var(--font-mono);&quot;&gt;&lt;code style=&quot;background: transparent; font-family: var(--font-mono); text-wrap-mode: wrap;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;+generate(enriched:list[EnrichedExplanation]) : final_outputs[str]&lt;/font&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;p class=&quot;font-claude-response-body break-words whitespace-normal leading-[1.7]&quot; style=&quot;color: light-dark(rgb(234, 236, 240), rgb(32, 34, 37));&quot;&gt;&lt;/p&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class=&quot;font-claude-response-body break-words whitespace-normal leading-[1.7]&quot;&gt;&lt;/p&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="142" width="367" x="5" y="109" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-40" parent="1" style="swimlane;startSize=52;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;" value="«component»&#xa;UI_Dashboard" vertex="1">
+          <mxGeometry height="121" width="390" x="1443" y="216" as="geometry">
+            <mxRectangle height="44" width="50" x="1320" y="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-41" parent="_y1nvcFhynvPyaQwmGC4-40" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="+ render_findings(list[final_outputs]) : DataFrame&lt;br&gt;+ export(format: str) : file&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;+ render_no_findings(): str&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="42" width="270" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-42" edge="1" parent="1" source="_y1nvcFhynvPyaQwmGC4-2" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1;entryX=0.538;entryY=0.02;entryDx=0;entryDy=0;entryPerimeter=0;" target="_y1nvcFhynvPyaQwmGC4-4" value="calls">
+          <mxGeometry relative="1" x="-0.7839" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="158" y="70" />
+              <mxPoint x="158" y="152" />
+            </Array>
+            <mxPoint x="160" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-43" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1" value="calls">
+          <mxGeometry relative="1" x="-0.8113" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="310" y="112" />
+              <mxPoint x="310" y="471" />
+              <mxPoint x="173" y="471" />
+            </Array>
+            <mxPoint x="478" y="112" as="sourcePoint" />
+            <mxPoint x="173" y="509" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-44" edge="1" parent="1" source="_y1nvcFhynvPyaQwmGC4-2" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1" target="_y1nvcFhynvPyaQwmGC4-12" value="calls">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="170" />
+              <mxPoint x="480" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-45" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;entryX=0.5;entryY=0;entryDx=0;entryDy=0;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1" value="calls">
+          <mxGeometry relative="1" x="-0.7705" y="-11" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="624" y="120" />
+              <mxPoint x="624" y="378" />
+              <mxPoint x="480" y="378" />
+            </Array>
+            <mxPoint x="626" y="120" as="sourcePoint" />
+            <mxPoint x="480.0000000000002" y="401" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-46" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;entryX=0.5;entryY=0;entryDx=0;entryDy=0;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1" value="calls">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="793" y="159" />
+              <mxPoint x="795" y="159" />
+            </Array>
+            <mxPoint x="793" y="120" as="sourcePoint" />
+            <mxPoint x="795" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-47" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" value="calls">
+          <mxGeometry relative="1" x="-0.8776" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="648" y="120" />
+              <mxPoint x="648" y="378" />
+              <mxPoint x="788" y="378" />
+            </Array>
+            <mxPoint x="652" y="120" as="sourcePoint" />
+            <mxPoint x="788" y="417" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-48" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1" target="_y1nvcFhynvPyaQwmGC4-28" value="calls">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1054" y="162" />
+              <mxPoint x="1224" y="162" />
+            </Array>
+            <mxPoint x="1054" y="124" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-49" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_y1nvcFhynvPyaQwmGC4-33" value="calls">
+          <mxGeometry relative="1" x="-0.8519" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1028" y="631" />
+            </Array>
+            <mxPoint x="1028" y="121" as="sourcePoint" />
+            <mxPoint x="981" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-51" edge="1" parent="1" source="_y1nvcFhynvPyaQwmGC4-4" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;startArrow=ERmandOne;startFill=0;strokeColor=light-dark(#6C8EBF,#000000);fontSize=16;swimlaneLine=0;shadow=0;fillColor=#dae8fc;fontColor=light-dark(#000000, #e5d2d2);fontStyle=1" target="_y1nvcFhynvPyaQwmGC4-8" value="produces 0..*">
+          <mxGeometry relative="1" x="0.0671" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-52" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;startArrow=ERmandOne;startFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fillColor=#dae8fc;fontColor=light-dark(#000000, #f3f1f1);fontStyle=1" value="produces 0..*">
+          <mxGeometry relative="1" x="0.0515" y="2" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="149" y="671" />
+              <mxPoint x="149" y="671" />
+            </Array>
+            <mxPoint x="149" y="632" as="sourcePoint" />
+            <mxPoint x="149" y="729" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-53" edge="1" parent="1" source="_y1nvcFhynvPyaQwmGC4-24" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;startArrow=ERmandOne;startFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fillColor=#b0e3e6;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1" target="_y1nvcFhynvPyaQwmGC4-26" value="produces 1..*">
+          <mxGeometry relative="1" x="0.0381" y="3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-54" edge="1" parent="1" source="_y1nvcFhynvPyaQwmGC4-28" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;startArrow=ERmandOne;startFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fillColor=light-dark(#B0E3E6,#1A1A1A);fontColor=light-dark(#000000,#FFFFFF);fontStyle=1" target="_y1nvcFhynvPyaQwmGC4-30" value="produces 1..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-55" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;dashed=0;swimlaneLine=0;shadow=0;fillColor=#b0e3e6;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="_y1nvcFhynvPyaQwmGC4-26" value="contains">
+          <mxGeometry relative="1" x="0.3503" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="956" y="472" />
+              <mxPoint x="956" y="668" />
+              <mxPoint x="868" y="668" />
+            </Array>
+            <mxPoint x="1047" y="472" as="sourcePoint" />
+            <mxPoint x="891" y="782" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-56" edge="1" parent="1" source="_y1nvcFhynvPyaQwmGC4-32" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;startArrow=ERmandOne;startFill=0;strokeColor=light-dark(#0E8088,#000000);fontSize=16;swimlaneLine=0;shadow=0;fillColor=#b0e3e6;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1" target="_y1nvcFhynvPyaQwmGC4-34" value="produces 1..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-57" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fillColor=#b0e3e6;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1;dashed=1;" value="extends">
+          <mxGeometry relative="1" x="-0.5142" y="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1367" y="829" />
+              <mxPoint x="1367" y="464" />
+              <mxPoint x="1366" y="464" />
+              <mxPoint x="1366" y="463" />
+            </Array>
+            <mxPoint x="1338" y="829" as="sourcePoint" />
+            <mxPoint x="1337" y="463" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-58" edge="1" parent="1" source="_y1nvcFhynvPyaQwmGC4-2" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#FFFFFF);fillColor=light-dark(#FAD9D5,#99FFFF);fontStyle=1;entryX=0.576;entryY=-0.017;entryDx=0;entryDy=0;entryPerimeter=0;" target="_y1nvcFhynvPyaQwmGC4-40" value="calls">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1668" y="75" />
+              <mxPoint x="1668" y="158" />
+            </Array>
+            <mxPoint x="1598" y="207" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-59" parent="1" style="swimlane;startSize=45;fillColor=light-dark(#215E99,#215E99);strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="«component» &#xa;ERPConfigParser &amp; KnowledgeGraphBuilder" vertex="1">
+          <mxGeometry height="125" width="396" x="-55" y="506" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-60" parent="_y1nvcFhynvPyaQwmGC4-59" style="text;html=1;align=left;fontSize=16;spacingLeft=8;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#000000);rounded=1;fontStyle=1" value="&lt;span&gt;- graph_stats : dict&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="276" x="-6" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-61" parent="_y1nvcFhynvPyaQwmGC4-59" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontColor=light-dark(#000000,#0F0F0F);rounded=1;fontStyle=1;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="8" width="396" y="71" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-62" parent="_y1nvcFhynvPyaQwmGC4-59" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;" value="&lt;font face=&quot;Helvetica&quot;&gt;+parse(file:xlsx):tuple(list[ControlRecord],DiGraph)&lt;br&gt;&lt;span style=&quot;text-wrap-mode: nowrap;&quot;&gt;&amp;nbsp;-build_graph(records: list) : DiGraph&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="47" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-65" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=light-dark(#FFFF99,#FFFF99);strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;" value="&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;- embedding_model : str&lt;br&gt;- similarity_metric : str&lt;br&gt;- index_name : str&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="207" width="202" x="1562" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-66" edge="1" parent="1" source="_y1nvcFhynvPyaQwmGC4-32" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=light-dark(#000000,#000000);fontStyle=1;fontSize=16;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;curved=0;" target="_y1nvcFhynvPyaQwmGC4-65">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1383" y="651" />
+              <mxPoint x="1664" y="651" />
+            </Array>
+            <mxPoint x="1364" y="643.45" as="sourcePoint" />
+            <mxPoint x="1469" y="643" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-67" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;fontSize=16;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;«datastore»ISAVectorIndex&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="138" x="1592" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="mIymbf2194_gcKZp3wGv-3" edge="1" parent="1" source="_y1nvcFhynvPyaQwmGC4-35" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.945;entryY=1.011;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=1;exitDx=0;exitDy=0;strokeColor=light-dark(#000000,#000000);" target="_y1nvcFhynvPyaQwmGC4-27" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="992" y="968" as="sourcePoint" />
+            <mxPoint x="1152" y="968" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_y1nvcFhynvPyaQwmGC4-50" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#000000);fontSize=16;swimlaneLine=0;shadow=0;fontColor=light-dark(#000000,#FFFFFF);fontStyle=1" value="calls">
+          <mxGeometry relative="1" x="-0.9204" y="-6" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="993" y="123" />
+              <mxPoint x="993" y="936" />
+              <mxPoint x="1165" y="936" />
+            </Array>
+            <mxPoint x="992" y="121" as="sourcePoint" />
+            <mxPoint x="1165" y="953" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mIymbf2194_gcKZp3wGv-5" connectable="0" parent="_y1nvcFhynvPyaQwmGC4-50" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=90;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Contains&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.5429" as="geometry">
+            <mxPoint x="-29" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

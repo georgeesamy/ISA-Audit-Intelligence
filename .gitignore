@@ -22,7 +22,7 @@ ENV/
 # Vector database (generated at runtime)
 chroma_db/
 
-# ISA PDF source documents (add your own copies locally)
+# ISA PDF source documents in src/Data/ (copies live in resources/ISA-Standards/)
 src/Data/
 
 # Evaluation artefacts
